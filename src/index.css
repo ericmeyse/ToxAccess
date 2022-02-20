@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+  background: #f7f7f6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: Calibri, sans-serif;
+  line-height: 1.2em;
+}
+* {
+  box-sizing: border-box;
+}
+a, a:active, a:hover, a:visited, a:link {
+  text-decoration: none !important;
+}
+h2, h3, h4, h5 {
+  font-family: Calibri, sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1.2em;
+}
+:root {
+
+    --AbbottPrimaryBlue: #009cde;
+    --AbbottMediumBlue: #004f71;
+    --AbbottLightBlue: #5bc2e7;
+    --AbbottDarkBlue:   #002a3a;
+    --AbbottPurple: #470a68;
+    --AbbottMagenta: #aa0061;
+    --AbbottRed: #e4002b;
+    --AbbottGold: #eeb33b;
+    --AbbottYellow: #ffd100;
+    --AbbottLightGreen: #7ccc6c;
+    --AbbottMediumGreen: #00b140;
+    --AbbottMint: #64ccc9;
+
+    --AbbottLightestGray: #f7f7f6;
+    --AbbottLightGray: #d9d9d6;
+    --AbbottMediumGray: #888b8d;
+    --AbbottDarkGray: #63666a;
+    --AbbottCharcoal: #222731;
+    
+    --AbbottPrimary: #009cde;
+    --AbbottSecondary: #63666a;
+
+    
+}
