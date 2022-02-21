@@ -1,5 +1,5 @@
 import React from 'react'
-import Container from '@material-ui/core/Container'
+import Box from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import Link from '@material-ui/core/Link'
 import Typography from '@material-ui/core/Typography'
@@ -12,8 +12,7 @@ import ResultsIcon from '@material-ui/icons/AssignmentOutlined';
 const useStyles = makeStyles({
 	root: {
 		height: '75px',
-		width: '100%',
-		margin: '0 0 0 -1rem',
+		margin: '0',
 		padding: '0 1rem',
 		backgroundColor: '#004f71',
 		border: '2px solid #004f71 ',
@@ -77,11 +76,11 @@ export default function MenuFooter(props) {
 	const activeItem = props.activeItem;
 
 	return (
-		<Container component="div" disableGutters className={classes.root}>
+		<Box component="div" disableGutters className={classes.root}>
 			<Grid container wrap="nowrap" justifyContent="space-evenly" alignItems="flex-start" className={classes.menuGrid}>
 				<Grid item xs={4} className={ activeItem === "Collections" ? classes.menuGridItemActive : classes.menuGridItem } >
 
-					<Link href="/Collections" className={classes.iconMenuLinkActive}  alt="Collections">
+					<Link href="/Collections" to="" className={classes.iconMenuLinkActive}  alt="Collections">
 						<CollectionIcon fontSize="large" className={classes.icon} />	
 						<Typography className={classes.iconMenuLinkText}>Collections</Typography>
 					</Link>
@@ -89,7 +88,7 @@ export default function MenuFooter(props) {
 				</Grid>
 				<Grid item xs={4} className={ activeItem === "Results" ? classes.menuGridItemActive : classes.menuGridItem } >
 
-					<Link href="/Results" className={classes.iconMenuLink} alt="Results">
+					<Link href="/Results" to="" className={classes.iconMenuLink} alt="Results">
 						<ResultsIcon fontSize="large" className={classes.icon} />
 						<Typography className={classes.iconMenuLinkText}>Results</Typography>
 					</Link>
@@ -97,13 +96,13 @@ export default function MenuFooter(props) {
 				</Grid>
 				<Grid item xs={4} className={ activeItem === "Donors" ? classes.menuGridItemActive : classes.menuGridItem } >
 
-					<Link href="/Donors" className={classes.iconMenuLink} alt="Donors">
+					<Link href="/Donors" to="" className={classes.iconMenuLink} alt="Donors">
 						<DonorsIcon fontSize="large" className={classes.icon} />
 						<Typography className={classes.iconMenuLinkText}>Donors</Typography>
 					</Link>
 
 				</Grid>
 			</Grid>
-		</Container>
+		</Box>
 	)
 }

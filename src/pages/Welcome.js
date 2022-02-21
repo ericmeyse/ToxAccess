@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { Box, Typography, Container, Paper } from '@material-ui/core'
+import { Box, Typography, Paper } from '@material-ui/core'
 import { makeStyles } from  '@material-ui/core/styles'
 import { Link } from 'react-router-dom'
 import { TextField, FormControl, FormControlLabel, Checkbox, Button } from '@material-ui/core'
@@ -8,28 +8,28 @@ import { TextField, FormControl, FormControlLabel, Checkbox, Button } from '@mat
 import Footer from '../partials/Footer'
 
 const useStyles = makeStyles({
-    page: {
-        minHeight: '80vh',
-        marginTop: '0',
-        padding: 0,
+    root: {
         width: '100vw',
-        position: 'relative',
+        //minHeight: '80vh',
+        margin: '0',
+        padding: 0,
     },
     welcomeBox: {
-        padding: '3rem 2rem 6rem 2rem',
+        padding: '2rem 2rem 5rem 2rem',
         width: '100%',
         background: 'var(--AbbottPrimary)',
-        color: '#ffffff'
+        color: '#ffffff',
+        lineHeight: '1.1em',
     },
     welcomeHead: {
         font: 'Calibri, sans-serif', 
         fontWeight: '800',
-        marginBottom: '16px',
+        marginBottom: '.5rem',
     },
     authbox: {
         background: 'white',
-        margin: '0 2rem 0 2rem ',
-        padding: '2rem',
+        margin: '0px 2rem 0 2rem ',
+        padding: '1rem 2rem',
         position: 'relative',
         top: '-3rem',
         borderRadius: 0
@@ -37,7 +37,7 @@ const useStyles = makeStyles({
     authboxHead: {
         color: 'var(--AbbottPrimary)',
         fontWeight: '600',
-        marginBottom: '2rem'
+        margin: '0 0 1rem 0'
     },
     authboxLinks: {
         fontSize: '.8rem',
@@ -53,7 +53,7 @@ export default function Welcome() {
     const classes = useStyles()
 
     return (
-        <Container className={classes.page} maxWidth={false} >
+        <Box id="WelcomePage" className={classes.root} >
             <Box className={classes.welcomeBox}>
                 <Typography component="h3" variant="h5" className={classes.welcomeHead}>
                     Welcome!
@@ -117,7 +117,7 @@ export default function Welcome() {
                             </FormControl>
                         </Box>
 
-                        <Box align="center" sx={{ mt:4, mb:4 }}>
+                        <Box align="center" sx={{ mt:2, mb:2 }}>
                             <Button 
                                 fullWidth
                                 type="submit"
@@ -137,7 +137,6 @@ export default function Welcome() {
                     
                 </Paper>
             </Box>
-            <Footer className={classes.footer}></Footer>
-        </Container>
+        </Box>
     )
 }

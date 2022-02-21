@@ -5,7 +5,7 @@ import Toolbar from '@material-ui/core/Toolbar'
 import Box from '@material-ui/core/Box'
 import Typography from '@material-ui/core/Typography'
 import Drawer from '@material-ui/core/Drawer'
-import { IconButton, List, ListItem, ListItemIcon, ListItemText, makeStyles } from '@material-ui/core'
+import { IconButton, List, ListItem, ListItemIcon, makeStyles } from '@material-ui/core'
 
 import MenuIcon from '@material-ui/icons/Menu';
 import PersonIcon from '@material-ui/icons/Person';
@@ -22,6 +22,7 @@ const useStyles = makeStyles((theme) => {
         appbar: {
             background: 'var(--AbbottPrimary)',
             maxWidth: '1920px',
+            width: '100vw',
             margin: 'auto',
             padding: '0 1rem 0 1rem',
             zIndex: theme.zIndex.drawer + 2,
@@ -59,7 +60,6 @@ const useStyles = makeStyles((theme) => {
         drawerPaper: {
             width: drawerWidth,
             left: '0px',
-            //top: 56,
             backgroundColor: 'var(--AbbottLightGray)',
             zIndex: theme.zIndex.drawer + 1,
         },
@@ -87,14 +87,15 @@ const useStyles = makeStyles((theme) => {
             backgroundColor: 'white',
         },
         menuBoxList: {
-            paddingTop: '0px',
-            paddingBottom: '0'
+            paddingTop: '.5rem',
+            paddingBottom: '.5rem',
         },
         menuIconList: {
             paddingTop: '0',
             paddingBottom: '0',
         },
-        menuBoxListItem: {
+        menuBoxListItemDense: {
+            padding: '.5rem 0 .5rem 1rem',
         },
         menuIconListItem: {
             borderBottom: '1px solid var(--AbbottLightGray)',
@@ -108,6 +109,9 @@ const useStyles = makeStyles((theme) => {
         },
         menuLink: {
             textDecoration: 'none',
+            lineHeight: 'inherit',
+            display: 'inline-block',
+            paddingBottom: '4px'
         }
     }
 })
@@ -172,52 +176,58 @@ export default function Header() {
                 </Box>      
                 <Box className={classes.menuBox} sx={{ mb:2 }}>
                     <List className={classes.menuIconList}>
-                        <ListItem button className={classes.menuIconListItem}>
+                        <ListItem button className={classes.menuIconListItem} onClick={toggleDrawer(anchor, false)}>
                             <ListItemIcon className={classes.menuItemPad}><ColorizeOutlinedIcon/></ListItemIcon>
-                            <ListItemText>
-                                <Link to="/Collections" className={classes.menuLink}  onClick={toggleDrawer(anchor, false)}>
-                                    Collections
-                                </Link>
-                            </ListItemText>
+                            <Link to="/Collections" className={classes.menuLink} >
+                                Collections
+                            </Link>
                         </ListItem>
-                        <ListItem button className={classes.menuIconListItem}>
+                        <ListItem button className={classes.menuIconListItem} onClick={toggleDrawer(anchor, false)}>
                             <ListItemIcon className={classes.menuItemPad}><AssignmentOutlinedIcon/></ListItemIcon>
-                            <ListItemText >
-                                <Link to="/Results" className={classes.menuLink} onClick={toggleDrawer(anchor, false)}>
-                                    Results
-                                </Link>
-                            </ListItemText>
+                            <Link to="/Results" className={classes.menuLink} >
+                                Results
+                            </Link>
                         </ListItem>
-                        <ListItem button className={classes.menuIconListItem}>
+                        <ListItem button className={classes.menuIconListItem} onClick={toggleDrawer(anchor, false)}>
                             <ListItemIcon className={classes.menuItemPad}><SupervisorAccountIcon /></ListItemIcon>
-                            <ListItemText>
-                                <Link to="/Donors" className={classes.menuLink} onClick={toggleDrawer(anchor, false)}>
-                                    Donors
-                                </Link>
-                            </ListItemText>
+                            <Link to="/Donors" className={classes.menuLink}>
+                                Donors
+                            </Link>
                         </ListItem>
                     </List>
                 </Box>
 
                 <Box className={classes.menuBox}>
                     <List className={classes.menuBoxList}>
-                        <ListItem button className={classes.menuBoxListItem}>
-                            <ListItemText className={classes.menuItemPad}>Password Settings</ListItemText>
+                        <ListItem button className={classes.menuBoxListItemDense}>
+                            <Link href="/Account" to="" className={classes.menuItemPad} onClick={toggleDrawer(anchor, false)}>
+                                Password Settings
+                            </Link>
                         </ListItem>
-                        <ListItem button className={classes.menuBoxListItem}>
-                            <ListItemText className={classes.menuItemPad}>About</ListItemText>
+                        <ListItem button className={classes.menuBoxListItemDense}>
+                            <Link href="/NoAccount" to="" className={classes.menuItemPad} onClick={toggleDrawer(anchor, false)}>
+                                About
+                            </Link>
                         </ListItem>
-                        <ListItem button className={classes.menuBoxListItem}>
-                            <ListItemText className={classes.menuItemPad}>Help</ListItemText>
+                        <ListItem button className={classes.menuBoxListItemDense}>
+                            <Link href="/Help" to="" className={classes.menuItemPad} onClick={toggleDrawer(anchor, false)}>
+                                Help
+                            </Link>
                         </ListItem>
-                        <ListItem button className={classes.menuBoxListItem}>
-                            <ListItemText className={classes.menuItemPad}>Privacy Policy</ListItemText>
+                        <ListItem button className={classes.menuBoxListItemDense}>
+                            <Link href="/Privacy" to="" className={classes.menuItemPad} onClick={toggleDrawer(anchor, false)}>
+                                Privacy Policy
+                            </Link>
                         </ListItem>
-                        <ListItem button className={classes.menuBoxListItem}>
-                            <ListItemText className={classes.menuItemPad}>Terms of Use</ListItemText>
+                        <ListItem button className={classes.menuBoxListItemDense}>
+                            <Link href="/Terms" to="" className={classes.menuItemPad} onClick={toggleDrawer(anchor, false)}>
+                                Terms of Use
+                            </Link>
                         </ListItem>
-                        <ListItem button className={classes.menuBoxListItem}>
-                            <ListItemText className={classes.menuItemPad}>Log Out</ListItemText>
+                        <ListItem button className={classes.menuBoxListItemDense}>
+                            <Link href="/Welcome" to="" className={classes.menuItemPad} onClick={toggleDrawer(anchor, false)}>
+                                Log Out
+                            </Link>
                         </ListItem>
                     </List>
                 </Box>

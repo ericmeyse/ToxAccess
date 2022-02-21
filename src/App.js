@@ -13,7 +13,7 @@ import NoAccount from './pages/NoAccount'
 const AbbottTheme = createTheme(
   {
     palette: {
-      primary: { main: '#009cde'},
+        primary: { main: '#009cde', dark: '#002a3a', light: '#5bc2e7' },
       secondary: { main: '#63666a' }
     },
     typography: {
@@ -24,12 +24,11 @@ const AbbottTheme = createTheme(
     },
     components: {
       MuiButton: {
-        styleOverrides: {
-          root: {
-            textTransform: 'uppercase',
-            fontWeight: '700',
-            fontSize: '1.2rem',
-          },
+        root: {
+        textTransform: 'uppercase',
+        fontWeight: '700',
+        fontSize: '1.4rem',
+
         },
       },
       MuiTypography: {

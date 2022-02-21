@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
-import Container from '@material-ui/core/Container'
 import Box from '@material-ui/core/Box'
 import { makeStyles, InputBase } from '@material-ui/core'
 import MenuFooter from '../components/MenuFooter'
@@ -14,29 +13,24 @@ import TodayIcon from '@material-ui/icons/Today';
 const useStyles = makeStyles({
 	root: {
 		paddingTop: '2rem',
-		paddingLeft: '2rem',
-		paddingRight: '2rem',
 		width: '100vw',
 	},
 	page: {
 		paddingTop: '1rem',
 		paddingLeft: '1rem',
 		paddingRight: '1rem',
-		width: '100%',
+		width: '100vw',
 	},
 	searchBar: {
 		backgroundColor: '#009cde',  /* {primary} */
 		padding: '1rem',
-		marginLeft: '-1rem',
-		width: 'calc(100% + 2rem)',
 		textAlign: 'center',
 		position: 'relative',
 	},
 	headingBar: {
 		backgroundColor: '#f7f7f6',
 		padding: '1rem',
-		marginLeft: '-1rem',
-		width: '100vw',
+		width: '100%',
 		position: 'relative',
 	},
 	field: {
@@ -54,7 +48,7 @@ const useStyles = makeStyles({
 	},
 	searchIcon: {
 		position: 'absolute',
-		left: '3rem',
+		left: '2rem',
 		top: '1.6rem',
 		color: '#666',
 		zIndex: '10'
@@ -74,14 +68,13 @@ const useStyles = makeStyles({
 		display: 'inline-block',
 	},
 	gridBox: {
-		width: 'calc(100vw)',
-		margin: '0 0 5rem -1rem',
+		margin: '0',
 		padding: '0',
-		background: '#ffffff',
 	},
 	gridBoxItem: {
 		padding: '1rem',
 		borderBottom: '1px solid #ccc',
+		background: '#ffffff',
 	},
 	addButton: {
 		zIndex: '1000',
@@ -116,7 +109,7 @@ export default function Collections() {
 	}, [])
 	
 	return (
-		<Container >
+		<Box  id="CollectionsPage">
 			<Box className={classes.searchBar}>
 				<SearchIcon className={classes.searchIcon} />
 				<InputBase
@@ -126,7 +119,7 @@ export default function Collections() {
 				/>
             </Box>
 
-			<Box  className={classes.headingBar}>
+			<Box id="HeadingBar" className={classes.headingBar}>
 
 				<Typography  
 					className={classes.heading}
@@ -167,6 +160,6 @@ export default function Collections() {
 				<AddIcon  className={classes.addButtonIcon} />
 			</Button>		
 
-		</Container>
+		</Box>
 	)
 }

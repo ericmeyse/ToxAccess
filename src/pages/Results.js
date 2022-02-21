@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
-import Container from '@material-ui/core/Container'
 import Box from '@material-ui/core/Box'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles, InputBase } from '@material-ui/core'
@@ -15,29 +14,24 @@ import TodayIcon from '@material-ui/icons/Today';
 const useStyles = makeStyles({
 	root: {
 		paddingTop: '2rem',
-		paddingLeft: '2rem',
-		paddingRight: '2rem',
 		width: '100vw',
 	},
 	page: {
 		paddingTop: '1rem',
 		paddingLeft: '1rem',
 		paddingRight: '1rem',
-		width: '100%',
+		width: '100vw',
 	},
 	searchBar: {
 		backgroundColor: '#009cde',  /* {primary} */
 		padding: '1rem',
-		marginLeft: '-1rem',
-		width: 'calc(100% + 2rem)',
 		textAlign: 'center',
 		position: 'relative',
 	},
 	headingBar: {
 		backgroundColor: '#f7f7f6',
 		padding: '1rem',
-		marginLeft: '-1rem',
-		width: '100vw',
+		width: '100%',
 		position: 'relative',
 	},
 	field: {
@@ -55,7 +49,7 @@ const useStyles = makeStyles({
 	},
 	searchIcon: {
 		position: 'absolute',
-		left: '3rem',
+		left: '2rem',
 		top: '1.6rem',
 		color: '#666',
 		zIndex: '10'
@@ -83,14 +77,13 @@ const useStyles = makeStyles({
 		display: 'inline-block',
 	},
 	gridBox: {
-		width: 'calc(100vw)',
-		margin: '0 0 5rem -1rem',
+		margin: '0',
 		padding: '0',
-		background: '#ffffff',
 	},
 	gridBoxItem: {
 		padding: '1rem',
 		borderBottom: '1px solid #ccc',
+		background: '#ffffff',
 	},
 	col1: {
 		flexGrow: '1',
@@ -114,7 +107,7 @@ export default function Results() {
 	}, [])
 	
 	return (
-		<Container >
+		<Box id="ResultsPage">
 			<Box className={classList.searchBar}>
 				<SearchIcon className={classList.searchIcon} />
 				<InputBase
@@ -167,10 +160,6 @@ export default function Results() {
 
 			<MenuFooter activeItem="Results" />
 
-			<Button className={classList.addButton}>
-				<AddIcon  className={classList.addButtonIcon} />
-			</Button>		
-
-		</Container>
+		</Box>
 	)
 }

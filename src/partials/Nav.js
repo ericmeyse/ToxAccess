@@ -8,7 +8,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
+import Link from '@material-ui/core/Link';
 
 import PersonIcon from '@material-ui/icons/Person';
 import ColorizeOutlinedIcon from '@material-ui/icons/ColorizeOutlined';
@@ -83,10 +83,15 @@ const useStyles = makeStyles((theme) => {
         },
         menuBoxListItem: {
         },
+        menuBoxListItem2: {
+            paddingTop: '0px',
+            paddingBottom:  '0px',
+        },
         menuIconListItem: {
             borderBottom: '1px solid var(--AbbottLightGray)',
         },
-        menuItemPad:{
+        menuItemPad: {
+            padding: '0',
             paddingLeft: '1rem',
         },
         content: {
@@ -97,8 +102,6 @@ const useStyles = makeStyles((theme) => {
 });
 
 export default function Nav({isMenuOpen}) {
-
-
 
     const classes = useStyles();
 
@@ -153,24 +156,24 @@ export default function Nav({isMenuOpen}) {
                 </Box>
 
                 <Box className={classes.menuBox}>
-                    <List className={classes.menuBoxList}>
-                        <ListItem button className={classes.menuBoxListItem}>
-                            <ListItemText className={classes.menuItemPad}>Password Settings</ListItemText>
+                    <List component="div" className={classes.menuBoxList} dense="true">
+                        <ListItem component="div" className={classes.menuBoxListItem2} disableGutters>
+                            <Link className={classes.menuItemPad}>Password Settings</Link>
                         </ListItem>
-                        <ListItem button className={classes.menuBoxListItem}>
-                            <ListItemText className={classes.menuItemPad}>About</ListItemText>
+                        <ListItem component="div" className={classes.menuBoxListItem2} disableGutters>
+                            <Link to="/NoAccount" className={classes.menuItemPad}>About</Link>
                         </ListItem>
-                        <ListItem button className={classes.menuBoxListItem}>
-                            <ListItemText className={classes.menuItemPad}>Help</ListItemText>
+                        <ListItem component="div" className={classes.menuBoxListItem2} disableGutters>
+                            <Link className={classes.menuItemPad}>Help</Link>
                         </ListItem>
-                        <ListItem button className={classes.menuBoxListItem}>
-                            <ListItemText className={classes.menuItemPad}>Privacy Policy</ListItemText>
+                        <ListItem component="div" className={classes.menuBoxListItem2} disableGutters>
+                            <Link className={classes.menuItemPad}>Privacy Policy</Link>
                         </ListItem>
-                        <ListItem button className={classes.menuBoxListItem}>
-                            <ListItemText className={classes.menuItemPad}>Terms of Use</ListItemText>
+                        <ListItem component="div" className={classes.menuBoxListItem2} disableGutters>
+                            <Link className={classes.menuItemPad}>Terms of Use</Link>
                         </ListItem>
-                        <ListItem button className={classes.menuBoxListItem}>
-                            <ListItemText className={classes.menuItemPad}>Log Out</ListItemText>
+                        <ListItem component="div" className={classes.menuBoxListItem2} disableGutters>
+                            <Link to="/Welcome" className={classes.menuItemPad}>Log Out</Link>
                         </ListItem>
                     </List>
                 </Box>

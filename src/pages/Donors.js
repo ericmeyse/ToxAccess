@@ -1,9 +1,8 @@
 import React from 'react'
 import Typography from '@material-ui/core/Typography'
-import Container from '@material-ui/core/Container'
-import { makeStyles, InputBase } from '@material-ui/core'
 import Box from '@material-ui/core/Box'
 import MenuFooter from '../components/MenuFooter'
+import { makeStyles, InputBase } from '@material-ui/core'
 
 import SearchIcon from '@material-ui/icons/Search';
 //import FilterListIcon from '@material-ui/icons/FilterList';
@@ -12,31 +11,25 @@ import PeopleIcon from '@material-ui/icons/PeopleAlt';
 
 const useStyles = makeStyles({
 	root: {
-		paddingTop: '2rem',
-		paddingLeft: '2rem',
-		paddingRight: '2rem',
 		width: '100vw',
+		height: 'calc(100vh - 75px)',
 	},
 	page: {
-		paddingTop: '80vw',
+		paddingTop: '1rem',
 		paddingLeft: '1rem',
 		paddingRight: '1rem',
-		width: '100%',
-
+		width: '100vw',
 	},
 	searchBar: {
 		backgroundColor: '#009cde',  /* {primary} */
 		padding: '1rem',
-		marginLeft: '-1rem',
-		width: 'calc(100% + 2rem)',
 		textAlign: 'center',
 		position: 'relative',
 	},
 	headingBar: {
 		backgroundColor: '#f7f7f6',
 		padding: '1rem',
-		marginLeft: '-1rem',
-		width: '100vw',
+		width: '100%',
 		position: 'relative',
 	},
 	field: {
@@ -54,7 +47,7 @@ const useStyles = makeStyles({
 	},
 	searchIcon: {
 		position: 'absolute',
-		left: '3rem',
+		left: '2rem',
 		top: '1.6rem',
 		color: '#666',
 		zIndex: '10'
@@ -74,15 +67,19 @@ const useStyles = makeStyles({
 		display: 'inline-block',
 	},
 	gridBox: {
-		width: 'calc(100vw)',
-		margin: '0 0 5rem -1rem',
+		margin: '0',
 		padding: '0',
-		background: '#ffffff',
 	},
 	gridBoxItem: {
 		padding: '1rem',
 		borderBottom: '1px solid #ccc',
+		background: '#ffffff',
 	},
+	emptyResults: {
+		position: 'relative',
+		top: '50%',
+		transform: 'translateY(-50%)',
+    },
 	addButton: {
 		zIndex: '1000',
 		position: 'fixed',
@@ -117,7 +114,8 @@ export default function Donors() {
     const classes = useStyles()
 
     return (
-        <Container >
+		<Box id="DonorPage"  className={classes.root}>
+
             <Box className={classes.searchBar}>
                 <SearchIcon className={classes.searchIcon} />
                 <InputBase
@@ -126,8 +124,8 @@ export default function Donors() {
                     placeholder="Search by donor or unique ID"
                 />
             </Box>
-            {/* 
-            <Box  className={classes.headingBar}>
+            
+            <Box id="HeadingBar" display="none" className={classes.headingBar}>
                 <Typography  
                     className={classes.heading}
                     variant="h5"
@@ -135,19 +133,19 @@ export default function Donors() {
                     color="primary"
                     gutterBottom
                 >Donors</Typography>
-            </Box> */}
+            </Box>
 
-            <Box component="div" textAlign="center" color="#63666a">
-                <Box className={classes.page}>
+            <Box className={classes.emptyResults}>
+                <Box textAlign="center" className={classes.page}>
                     <Typography variant="h2" component="div" className={classes.IconContainer}>
-                        <PeopleIcon fontSize="inherit"  className={classes.pageIcon} />
+                        <PeopleIcon fontSize="inherit" color="secondary" className={classes.pageIcon} />
                     </Typography>
-                    <Typography variant="h4" component="h2">
+                    <Typography variant="h4" component="h2" color="secondary">
                         <div>Search</div>
                     </Typography>
                 </Box>
-				<Box  style={{ width:'70%', margin:'auto' }} >
-					<Typography align="center" fontSize="1.2rem" >
+				<Box  textAlign="center" style={{ width:'70%', margin:'auto' }} >
+					<Typography align="center" color="secondary" fontSize="1.2rem" >
 					You can lookup a donor using their name or unique ID
 					</Typography>
 				</Box>
@@ -155,6 +153,6 @@ export default function Donors() {
 
             <MenuFooter activeItem="Donors" />
 
-        </Container >
+        </Box >
     )
 }

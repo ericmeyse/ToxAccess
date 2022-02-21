@@ -1,14 +1,14 @@
 import * as React from 'react'
-import { Box, Container } from '@material-ui/core'
+import { Box } from '@material-ui/core'
 import { makeStyles } from  '@material-ui/core/styles'
 
 import Header from '../partials/Header'
-
+import Footer from '../partials/Footer'
 
 const useStyles = makeStyles((theme) => {
     return {
         page: {
-            width: '100vw',
+            width: '100%',
             height: 'calc(100vh)',
             padding: '0px',
             maxWidth: '100%',
@@ -17,8 +17,9 @@ const useStyles = makeStyles((theme) => {
         main: {
             width: '100%',
             maxWidth: '1920px',
-            minHeight: 'calc(100vh - 56px - 34px)',
-            padding: 0
+            minHeight: 'calc(100vh - 65px)',
+            padding: '0',
+            position: 'relative',
         }
     }
 })
@@ -27,7 +28,7 @@ export default function Layout ({ children, isMenuOpen  }) {
     const classes = useStyles()
 
     return (
-        <Container className={classes.page} >
+        <Box id="Layout" className={classes.page} >
             <Header className={classes.navbar}></Header>
             <Box component="main" className={classes.main} >
                 
@@ -36,6 +37,7 @@ export default function Layout ({ children, isMenuOpen  }) {
                 </Box>
 
             </Box>
-        </Container>
+            <Footer></Footer>
+        </Box>
     )
 }

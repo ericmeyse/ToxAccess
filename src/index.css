@@ -11,6 +11,7 @@ body {
 }
 a, a:active, a:hover, a:visited, a:link {
   text-decoration: none !important;
+  color: #002a3a;
 }
 h2, h3, h4, h5 {
   font-family: Calibri, sans-serif;
@@ -23,7 +24,7 @@ h2, h3, h4, h5 {
     --AbbottPrimaryBlue: #009cde;
     --AbbottMediumBlue: #004f71;
     --AbbottLightBlue: #5bc2e7;
-    --AbbottDarkBlue:   #002a3a;
+    --AbbottDarkBlue:  #002a3a;
     --AbbottPurple: #470a68;
     --AbbottMagenta: #aa0061;
     --AbbottRed: #e4002b;
